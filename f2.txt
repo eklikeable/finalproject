@@ -1,8 +1,0 @@
-souce : 1
-<<<<<<< HEAD
-hello ek
-hello hello
-front end
-hello ek, sheepjk and Sujin!!!
-team number 2 git hub start!!!
-20220713 injung plus!!
