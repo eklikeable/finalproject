@@ -5,8 +5,8 @@ hello hello
 front end
 hello ek, sheepjk and Sujin!!!
 <<<<<<< HEAD
-0713 10:50 sujin
 =======
 team number 2 git hub start!!!
 >>>>>>> ebfe8c05ba82c712d522bc6120e50f5c6767fb49
 
+hello hello
