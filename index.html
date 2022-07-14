@@ -4,15 +4,33 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
 <style>
+
+* {margin: 0; padding: 0;}
+body { overflow-y:scroll;}
 header {
-    width: 1440px;
-    height: 150px;
-    background-color: #ff0000;
+    margin-top : 20px;
+    background:linear-gradient(white 50px, rgba(255,255,255,0.5) 50px, rgba(255,255,255,0.5) );
+	height:50px;  
+	overflow:hidden;
+    transition: height 0.4s;
 }
+#topmenu:after {
+    content:'';display:block; clear:both;
+}
+
+nav {width:960px; margin:0 auto;}
+nav > ul > li {float:left; line-height:50px; margin-right:60px; position: relative; list-style:none;}
+nav > ul > li ul{ width:100%; position: absolute; list-style:none;}
+nav > ul > li ul li {white-space:nowrap;}
+
+/**
+ * 여기부터 메인
+ **/
+
 #main {
     display: flex;
-
 }
 #gallery {
     width: 1000px;
@@ -76,18 +94,27 @@ footer {
 }
 </style>
 <script>
+var header = document.querySelector('header'),
+    nav = document.querySelector('nav');
+
+    nav.addEventListener('mouseover', function() {
+        header.style.height = '270px';
+    });
+    nav.addEventListener('mouseout', function() {
+        header.style.height = '50px';
+    });
 
 </script>
 </head>
 <body>
 <header>
-    <div id="logo">
+    <!-- <div id="logo">
         <img src="#">
-    </div>
+    </div> -->
     <nav>
-        <ui>
-            <li id="topmenu">인사말
-                <ui>
+        <ui id="topmenu">
+            <li>인사말
+                <ui class="submenu">
                     <li>인사말</li>
                     <li>연혁</li>
                     <li>조직도</li>
@@ -95,21 +122,21 @@ footer {
                 </ui>
             </li>
             <li>회원사
-                <ui>
+                <ui class="submenu">
                     <li>회원사소식</li>
                     <li>가입안내</li>
                     <li>임원사 소개</li>
                 </ui>
             </li>
             <li>주요사업
-                <ui>
+                <ui class="submenu">
                     <li>회원사소식</li>
                     <li>가입안내</li>
                     <li>임원사 소개</li>
                 </ui>
             </li>
             <li>정보마당
-                <ui>
+                <ui class="submenu">
                     <li>회원사소식</li>
                     <li>가입안내</li>
                     <li>임원사 소개</li>
