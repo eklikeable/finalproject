@@ -68,17 +68,37 @@ footer {
 .info {
     width: 900px;
     height: 150px;
-    list-style: none;
     background-color: #F0EBE3;
 }
 .info .footer_nav{
-    display: inline-block;
     list-style: none;
 }
+.info .footer_nav li{
+    display: inline-block;
+}
+.info .footer_nav li a{
+    text-decoration: none;
+    color: black;
+}
+.info .ft_address{
+    list-style: none;
+}
+
 .socialMedia {
     width: 350px;
     height: 150px;
     background-color: #E4DCCF;
+}
+
+.socialMedia ul li{
+    display: inline-block;
+}
+.socialMedia ul li a img{
+    width: 45px; height: 45px;
+}
+.socialMedia .ft_sitemap li a{
+    text-decoration: none;
+    color: black;
 }
 </style>
 <script>
@@ -167,27 +187,33 @@ footer {
 <!------- footer ---------->
 <footer>
     <div class="footer_logo">
-        왼쪽 협회로고
+        <ul class="ft_logo">
+            <a href="#"><img src="ft_logo.png"></a>
+        </ul>
     </div>
     <div class="info">
+        
         <ul class="footer_nav">
-            <li>개인정보처리방침</li>
-            <li>이메일무단수집거부</li>
+            <li><a href="#">개인정보처리방침 <span>|</span></a></li>
+            <li>이메일무단수집거부 <span>|</span></li>
             <li>직업정보제공사업 신고번호 : J1516020190005</li>
         </ul>
-        <address>
+        <ul class="ft_address">
             <li>(06130) 서울 강남구 테헤란로 7길 22, 한국과학기술회관 1관 303호</li>
             <li>Tel : 02-6956-9952 <span>|</span>FAX : 02-6949-0165<span>|</span>이메일 : kibwa@kibwa.org</li>
             <li>개인정보, 이메일 수집거부 등 개인정보 관리자 등록 : 담당 이길용 사무국장</li>
-        </address>
-        <p class="copyright">©IT여성기업인협회 Inc. All Rights Reserved.</p>
+            <li>©IT여성기업인협회 Inc. All Rights Reserved.</li>
+        </ul>
     </div>
     <div class="socialMedia">
-        <ul>
-            <li>인스타</li>
-            <li><a href="https://www.youtube.com/channel/UCB4C4zcrDAm2dWW0dcoJuTw">유튜브</a></li>
-            <li>트위터</li>
-            <li>페이스북</li>
+        <ul class="ft_sns">
+            <li><a><img src ="instagram.png" alt="인스타그램"></a></li>
+            <li><a href="https://www.youtube.com/channel/UCB4C4zcrDAm2dWW0dcoJuTw"><img src ="youtube.png" alt="유튜브"></a></li>
+            <li><a><img src ="twitter.png" alt="트위터"></a></li>
+            <li><a><img src ="facebook.png" alt="페이스북"></a></li>
+        </ul>
+        <ul class="ft_sitemap">
+            <li><a href="#">SITEMAP</a></li>
         </ul>
     </div>
 </footer>
