@@ -1,6 +1,6 @@
 var header = document.querySelector('header'),
-    mainMenuList = document.querySelector('.mainmenu > li'),
-    subMenu = document.querySelector('.submenu'),
+    mainMenuList = document.querySelectorAll('#mainmenu > li'),
+    subMenu = document.querySelectorAll('.submenu'),
     headerHeight = header.offsetHeight;
     subMenuHeight = 0;
 
@@ -13,11 +13,11 @@ Var B = A.clientHeight; // padding 까지의 높이
 */
 
 for(var i=0; i<subMenu.length; i++){
-    if(subMenu[i].offsetHeight > subMenuHeight){
+    if(subMenu[i].offsetHeight > subMenuHeight) {
         subMenuHeight = subMenu[i].offsetHeight;
+        console.log(subMenu[i]);
     }
 }
-console.log(subMenuHeight);
 
 for(var i=0; i<mainMenuList.length; i++){
     mainMenuList[i].addEventListener('mouseover', function() {
