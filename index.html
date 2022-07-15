@@ -79,7 +79,7 @@
             background-color: #E4DCCF;
         }
 
-
+    /* ASIDE */
     /* sectionRight1 440x600*/
     @media (max-width: 1280px){
       .sectionRight .boxRight1 {
@@ -98,30 +98,36 @@
     }
       /* sectionRight boxRight1 */
    .boxRight1 {
-      padding: 5%;
-      background: #e6e8eb;
-      border-radius: 1.50rem;
+      padding: 2%;
+      background: #e7e8e8;
+      border-radius: 1.5rem;
+      height: 28%;
     }
-   #btnLogin div, #btnLogin a {
-      position: relative;
+    #btnLogin div, #btnLogin a {
       display: block;
-      padding: 1.25rem 1rem;
+      /* position: relative; */
+      margin: auto 5%;
+      padding: 4%;
       font-size: 1.15rem;
       font-weight: 550;
       color: #fff;
-      background: #656566;
-      border-radius: 0.5rem;
-      overflow: hidden;
-  }
-     #btnJoin a {
-      position: relative;
-      display: block;
-      padding: 1.15rem 1rem;
-      font-size: 1.15rem;
+      background: #3c4250;
+      border-radius: 1.1rem;
+      /* overflow: hidden; */
+    }
+    .btnsJoinIdPw {
+      display: flex;
+      justify-content:space-between;
+      margin: auto 5%;
+    }
+    #btnJoin, #btnId, #btnPw  {
+      /* position: relative; */
+      padding: 3% 5%;
+      /* font-size: 1.1rem; */
       font-weight: 550;
-      color: #656566;
+      color: #3c4250;
       background:#fff;
-      border-radius: 0.5rem;
+      border-radius: 1.1rem;
       overflow: hidden;
   }
 /* sectionRight pointMenu */
@@ -157,52 +163,308 @@
 }
 }
 #pointMenu {
-  padding: 2rem 0;
+  padding: 0 3%;
   list-style: none;
-  font-size: 0.8rem;
+  font-size: 80%;
+  height: 17%;
 }
 #pointMenu > li {
   display:flex;
-  float: left; 
+  float:left; 
   justify-content:space-between;
-  margin-left: 24px;
+  padding: 1% 5%;
 }
+
 #pointMenu > li div {
-  overflow: hidden; 
-  width: 80px;
-  height: 80px;
-  line-height: 80px;
+  /* overflow: hidden;  */
+  width: 60px;
+  height: 60px;
   background: #fff;
-  border-radius: 1.1rem;
-  box-shadow: -2px -2px 5px rgb(0 0 0 / 5%), 2px 2px 5px rgb(0 0 0 / 5%);
-  /* flex-wrap: wrap;  */
+  /* border-radius: 1.1rem; */
+  /* box-shadow: -2px -2px 5px rgb(0 0 0 / 5%), 2px 2px 5px rgb(0 0 0 / 5%); */
+  flex-wrap: wrap; 
+}
+#pointMenu > li div img {
+  height: 99%;
+  width: 99%;
+  opacity: 0.5;
+  vertical-align:middle;
   }
-  #pointMenu > li div img {
-    /* object-fit: contain; */
-    height: 99%;
-    width: 99%;
-    opacity: 0.6;
-    vertical-align:middle;
-    }
 #pointMenu > li p {
     margin-top: 1rem;
     text-align: center;
     font-weight: 600;
-    color: rgb(48, 48, 48);
-    overflow: visible;
-    line-height: 1.2;
+    color: #3c4250;
+    /* overflow: visible; */
+    /* line-height: 1.2; */
 }
 #pointMenu > li div:hover img{
     display:block;
-    transform:translate(3px,3px) ;   
+    transform:translate(2px,2px) ;   
     opacity: 0.9;
     }
 
 #calendar {
+  width: 100%;
+  height:57%;
+  padding: 3%;
+
 }
+/* Calendar _boxRight3 */
+/* html, body {
+      box-sizing: border-box;
+      padding: 0;
+      margin: 0;
+    }
+
+    *, *:before, *:after {
+      box-sizing: inherit;
+    }
+
+    .clearfix:after {
+      content: '';
+      display: block;
+      clear: both;
+      float: none;
+    } */
+
+    /* Calendar */
+    .my-calendar {
+      width: 440px;
+      
+      padding: 15px 20px 10px;
+      text-align: center;
+      font-weight: 800;
+      border: 1px solid #ddd;
+      cursor: default;
+    }
+    .my-calendar .clicked-date {
+      border-radius: 25px;
+      margin-top: 10px;
+      float: left;
+      width: 30%;
+      padding: 46px 0 26px;
+      background: #ddd;
+    }
+    .my-calendar .calendar-box {
+      float: right;
+      width: 70%;
+      padding-left: 30px;
+    }
+
+    .clicked-date .cal-day {
+      font-size: 15px;
+    }
+    .clicked-date .cal-date {
+      font-size: 60px;
+    }
+
+    .ctr-box {
+      margin-bottom: 15px;
+    }
+    .ctr-box .btn-cal {
+      position: relative;
+      float: left;
+      width: 25px;
+      height: 25px;
+      margin-top: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      border: none;
+      background: none;
+    }
+    .ctr-box .btn-cal:after {
+      content: '<';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      line-height: 20px;
+      font-weight: bold;
+      font-size: 20px;
+    }
+    .ctr-box .btn-cal.next {
+      float: right;
+    }
+    .ctr-box .btn-cal.next:after {
+      content: '>';
+    }
+
+    .cal-table {
+      width: 100%;
+    }
+    .cal-table th {
+      width: 14.2857%;
+      padding-bottom: 5px;
+      font-size: 11px;
+      font-weight: 900;
+    }
+    .cal-table td {
+      padding: 3px 0;
+      font-size: 11px;
+      vertical-align: middle;
+    }
+    .cal-table td.day {
+      position: relative;
+      cursor: pointer;
+    }
+    .cal-table td.today {
+      background: #ffd255;
+      border-radius: 50%;
+      color: #fff;
+    }
+    .cal-table td.day-active {
+      background: #ff8585;
+      border-radius: 50%;
+      color: #fff;
+    }
+    .cal-table td.has-event:after {
+      content: '';
+      display: block;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 4px;
+      background: #FFC107;
+    }
+/* the end of ASIDE  */
     </style>
     <script>
+// calendar of ASDIE 
+const init = {
+      monList: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
+      dayList: ['일요일', '월요일', '화요일', '수요일', '목요일', '금요일', '토요일'],
+      today: new Date(),
+      monForChange: new Date().getMonth(),
+      activeDate: new Date(),
+      getFirstDay: (yy, mm) => new Date(yy, mm, 1),
+      getLastDay: (yy, mm) => new Date(yy, mm + 1, 0),
+      nextMonth: function () {
+        let d = new Date();
+        d.setDate(1);
+        d.setMonth(++this.monForChange);
+        this.activeDate = d;
+        return d;
+      },
+      prevMonth: function () {
+        let d = new Date();
+        d.setDate(1);
+        d.setMonth(--this.monForChange);
+        this.activeDate = d;
+        return d;
+      },
+      addZero: (num) => (num < 10) ? '0' + num : num,
+      activeDTag: null,
+      getIndex: function (node) {
+        let index = 0;
+        while (node = node.previousElementSibling) {
+          index++;
+        }
+        return index;
+      }
+    };
 
+    const $calBody = document.querySelector('.cal-body');
+    const $btnNext = document.querySelector('.btn-cal.next');
+    const $btnPrev = document.querySelector('.btn-cal.prev');
+
+    /**
+     * @param {number} date
+     * @param {number} dayIn
+    */
+    function loadDate (date, dayIn) {
+      document.querySelector('.cal-date').textContent = date;
+      document.querySelector('.cal-day').textContent = init.dayList[dayIn];
+    }
+
+    /**
+     * @param {date} fullDate
+     */
+    function loadYYMM (fullDate) {
+      let yy = fullDate.getFullYear();
+      let mm = fullDate.getMonth();
+      let firstDay = init.getFirstDay(yy, mm);
+      let lastDay = init.getLastDay(yy, mm);
+      let markToday;  // for marking today date
+      
+      if (mm === init.today.getMonth() && yy === init.today.getFullYear()) {
+        markToday = init.today.getDate();
+      }
+
+      document.querySelector('.cal-month').textContent = init.monList[mm];
+      document.querySelector('.cal-year').textContent = yy;
+
+      let trtd = '';
+      let startCount;
+      let countDay = 0;
+      for (let i = 0; i < 6; i++) {
+        trtd += '<tr>';
+        for (let j = 0; j < 7; j++) {
+          if (i === 0 && !startCount && j === firstDay.getDay()) {
+            startCount = 1;
+          }
+          if (!startCount) {
+            trtd += '<td>'
+          } else {
+            let fullDate = yy + '.' + init.addZero(mm + 1) + '.' + init.addZero(countDay + 1);
+            trtd += '<td class="day';
+            trtd += (markToday && markToday === countDay + 1) ? ' today" ' : '"';
+            trtd += ` data-date="${countDay + 1}" data-fdate="${fullDate}">`;
+          }
+          trtd += (startCount) ? ++countDay : '';
+          if (countDay === lastDay.getDate()) { 
+            startCount = 0; 
+          }
+          trtd += '</td>';
+        }
+        trtd += '</tr>';
+      }
+      $calBody.innerHTML = trtd;
+    }
+
+    /**
+    * @param {string} val
+    */
+    function createNewList (val) {
+      let id = new Date().getTime() + '';
+      let yy = init.activeDate.getFullYear();
+      let mm = init.activeDate.getMonth() + 1;
+      let dd = init.activeDate.getDate();
+      const $target = $calBody.querySelector(`.day[data-date="${dd}"]`);
+
+      let date = yy + '.' + init.addZero(mm) + '.' + init.addZero(dd);
+
+      let eventData = {};
+      eventData['date'] = date;
+      eventData['memo'] = val;
+      eventData['complete'] = false;
+      eventData['id'] = id;
+      init.event.push(eventData);
+      $todoList.appendChild(createLi(id, val, date));
+    }
+
+    loadYYMM(init.today);
+    loadDate(init.today.getDate(), init.today.getDay());
+
+    $btnNext.addEventListener('click', () => loadYYMM(init.nextMonth()));
+    $btnPrev.addEventListener('click', () => loadYYMM(init.prevMonth()));
+
+    $calBody.addEventListener('click', (e) => {
+      if (e.target.classList.contains('day')) {
+        if (init.activeDTag) {
+          init.activeDTag.classList.remove('day-active');
+        }
+        let day = Number(e.target.textContent);
+        loadDate(day, e.target.cellIndex);
+        e.target.classList.add('day-active');
+        init.activeDTag = e.target;
+        init.activeDate.setDate(day);
+        reloadTodo();
+      }
+    });
+    //end of calendar of ASIDE
     </script>
 </head>
 <body>
@@ -249,46 +511,54 @@
     <div id="gallery">
         사진슬라이드
     </div>
-<!------- main : right ---------->
+<!------- main : right ; PART 4 ---------->
     <aside>
         <section class="sectionRight" style="float: right">
             <div class="boxRight1">
               <p id="btnLogin">
-                <a href="#">IT여성기업인협회 로그인</a>
+                <a href="http://kibwahn.cafe24.com/index.php?act=dispMemberLoginForm">IT여성기업인협회 로그인</a>
               </p>
-              <p id="btnJoin">
-                <a href="#">회원가입</a>
-              </p>
+              <div class="btnsJoinIdPw">
+                <p id= "btnJoin">
+                  <a href="http://kibwahn.cafe24.com/index.php?mid=introduce&act=dispMemberSignUpForm">회원가입</a>
+                </p>
+                <p id = "btnId">
+                  <a href="http://kibwahn.cafe24.com/index.php?act=dispMemberFindAccount&mid=greeting">아이디찾기</a>
+                </p>
+                <p id = "btnPw">
+                  <a href="http://kibwahn.cafe24.com/index.php?act=dispMemberFindAccount&mid=greeting"> 비밀번호찾기</a>
+                </p>
+              </div>
             </div>
             <ul class = "boxRight2" id ="pointMenu">
               <li>
-                <a href="#">
+                <a href="http://kibwahn.cafe24.com/introduce">
                   <div>
-                    <img src="icons/NaturePlant.png" alt="" >
+                    <img src="icons/buildings.png" alt="" >
                   </div>
-                  <p>협회소개</p>
+                  <p>임원사소개</p>
                 </a>
               </li>
               <li>
-                <a href="#">
+                <a href="http://kibwahn.cafe24.com/newsletter">
                   <div>
-                    <img src="icons/people.png" alt="">
+                    <img src="icons/envelope.png" alt="">
                   </div>
-                  <p>행사갤러리</p>
+                  <p>뉴스레터</p>
                 </a>
               </li>
               <li>
-                <a href="#">
+                <a href="http://kibwahn.cafe24.com/education">
                   <div>
-                    <img src="icons/community.png" alt="">
+                    <img src="icons/edu.png" alt="">
                   </div>
-                  <p>회원사 소식</p>
+                  <p>교육정보  </p>
                 </a>
               </li>
               <li>
-                <a href="#">
+                <a href="http://kibwahn.cafe24.com/members_info">
                   <div>
-                    <img src="icons/join.png" alt="">
+                    <img src="icons/shakeHands.png" alt="">
                   </div>
                   <p>가입안내</p>
                 </a>
@@ -298,6 +568,40 @@
              
             </div> 
           </section>
+          <!-- calendar -->
+          <table id="cal_table"></table><div class="container">
+            <div class="my-calendar clearfix">
+              <div class="clicked-date">
+                <div class="cal-day"></div>
+                <div class="cal-date"></div>
+              </div>
+              <div class="calendar-box">
+                <div class="ctr-box clearfix">
+                  <button type="button" title="prev" class="btn-cal prev">
+                  </button>
+                  <span class="cal-month"></span>
+                  <span class="cal-year"></span>
+                  <button type="button" title="next" class="btn-cal next">
+                  </button>
+                </div>
+                <table class="cal-table">
+                  <thead>
+                    <tr>
+                      <th>S</th>
+                      <th>M</th>
+                      <th>T</th>
+                      <th>W</th>
+                      <th>T</th>
+                      <th>F</th>
+                      <th>S</th>
+                    </tr>
+                  </thead>
+                  <tbody class="cal-body"></tbody>
+                </table>
+              </div>
+            </div>
+            <!-- // .my-calendar -->
+          </div>  
     </aside>
 </section>
 <!------- main : business ---------->
