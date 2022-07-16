@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>banner01</title>
+    <script src="https://kit.fontawesome.com/49cbe197c4.js" crossorigin="anonymous"></script>
+    <style>
+        body { 
+            margin: 0 auto;
+            box-sizing: border-box;
+            font-family: Robot; 
+        }
+        #main3 {
+            display: flex;
+        }
+        #board {
+            width: 980px;
+            height: 320px;
+            background-color:#E4DCCF;
+        }
+        #banner {
+            width: 460px;
+            height: 320px;
+            position: relative;
+        }
+
+        .banner_top {
+            height: 30px;
+            margin: 24px 25px 16px 25px;
+            display: flex;       
+        }
+        .banner_btn {
+            margin-right: auto;
+        }
+        .banner_btn label {
+            margin-right: 15px;
+            /*background:#ccc;
+            border-radius: 50%;*/     /* 둥근 버튼모양을 위해 */
+            cursor: pointer;    /* 마우스 오버시 커서가 포인터로 바뀌도록 */
+        }
+        .banner_btn label i {
+            font-size: 20px;
+        }
+        .banner_cate {
+            margin-left: auto;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .banner_img {
+            width: 410px;
+            height: 230px;
+            border: 1px solid;
+            border-color: #E1E1E1;
+            margin-left: 25px;
+            margin-right: 25px;
+        }
+    </style>
+    <script>
+        // 배너 버튼 클릭->이미지 전환
+        var num=1;
+        function func1(n){
+            if(n){
+                if(num==3) return;
+                num++;
+            }
+            else{
+                if(num==1) return;
+                num--;
+            }
+            var x=document.getElementById("photo");
+            x.setAttribute("src","img/banner"+num+".png");
+        }
+    </script>
+</head>
+<body>
+    <article id="main3">
+        <div id="board">
+            <div>공지사항</div>
+            <div>인사동정</div>
+        </div>
+        <div id="banner">
+            <div class="banner_top">
+                <div class="banner_btn">
+                    <label class="left"><i class="fa-solid fa-angle-left" onclick="fun(0)"></i></label>
+                    <label class="right"><i class="fa-solid fa-angle-right" onclick="func1(1)"></i></label>
+                    <!-- <button onclick="func1(0)">이전</button>
+                    <button onclick="func1(1)">다음</button> -->
+                </div>
+                <div class="banner_cate">진행중인 교육</div>
+            </div>
+
+            <div class="banner_img">
+                <img src="img/banner1.png" id="photo" title="picture">
+            </div>
+        </div>
+    </article>
+</body>
+</html>
