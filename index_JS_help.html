@@ -1,0 +1,305 @@
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body { 
+            margin: 0 auto;
+            box-sizing: border-box; 
+        }
+        header {
+            width: 1440px;
+            height: 150px;
+            background-color: #F0EBE3;
+        }
+        #main {
+            display: flex;
+
+        }
+        #gallery {
+            width: 1000px;
+            height: 600px;
+            background-color: #E4DCCF;
+        }
+        aside {
+            width: 440px;
+            height: 600px;
+            background-color: #576F72;
+        }
+        #main2 {
+            display: flex;
+        }
+        #business {
+            display: flex;
+        }
+        .businessBanner {
+            width: 410px;
+            height: 230px;
+            background-color: #7D9D9C;
+        }
+        .businessIcon {
+            width: 1030px;
+            height: 230px;
+            background-color: #F0EBE3;
+        }
+        #main3 {
+            display: flex;
+        }
+
+        /************* yang-ji-seon (main3 - board) start *************/ 
+        #board {
+            width: 960px;
+            height: 300px;
+            background-color: #E1E1E1;
+            display: flex;
+            align-content: center;
+            justify-content: space-evenly;
+            /* display: grid; */
+            /* grid-template-columns: 50% 50%; */
+            /* border: 2px solid red; */
+        }
+    
+        #notice, #education {
+            width:400px;
+            margin-top: 50px;
+        }
+
+        #board .board_top {
+            margin-left: 10px;
+            height:40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            /* border: 3px solid rgb(0, 166, 255); */
+        }
+    
+        #board a {
+            text-decoration: none;
+        }
+
+        #board .square {
+          position: absolute;
+          width: 80px;
+          height: 80px;
+          border-radius: 20%;
+          background-color: #3C4250;
+          transition: all ease-out 0.7s;
+        }
+    
+        #board .title {
+          position: relative;
+          width:80px;
+          color: #fff;
+          font-size: 15px;
+          text-align: center;
+          pointer-events: none;
+        }
+    
+        #board .square:hover {
+          transform: rotate(25deg);
+          transition: all ease-out 0.7s;
+        }
+
+        #board .square:hover .title {
+            pointer-events: auto;
+        }
+        
+        /* 
+          이 문제점이 생긴 과정
+          .square와 .title을 position으로 겹쳐놓았더니 뒤에 .square가 인식이 안됨
+          -> .title에 pointer-events: none; 이렇게 해주면 뒤에 .square가 인식된다함
+          -> 저게 클릭이나 hover등등 이벤트를 없애주는거라 .title의 a태그 역할까지 사라져버림ㅠㅠ
+          -> 그래서 .square hover시 title에 pointer-events: auto; 를 줘서 다시 되돌리려 했으나 안됨
+          -> 그래서 .title에 직접 hover 주고 pointer-events: auto; 해봤으나 이것도 안됨...
+        */
+    
+        #board .more {
+            color: black;
+            font-weight: bold;
+        }
+    
+        #board .board_list { 
+            border-radius: 15px;
+            padding: 13px 20px 10px 0px;
+            background-color: #fff;
+            box-shadow: 5px 5px rgba(0, 0, 0, 0.073);
+            list-style-position: inside;
+        }
+    
+        #board ul > li {
+            font-size: 15px;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            line-height: 30px;
+            /* border: 2px solid darkmagenta; */
+        }
+    
+        #board ul > li::marker {
+            color: black;
+        }
+        /************* yang-ji-seon (main3 - board) end *************/ 
+
+        #popup {
+            width: 480px;
+            height: 300px;
+            background-color: #7D9D9C ;
+        }
+        footer {
+            width: 1440px;
+            height: 150px;
+            background-color: gainsboro;
+            display: flex;
+        }
+        .assoLogo {
+            width: 190px;
+            height: 150px;
+            background-color: #7D9D9C;
+        }
+        .info {
+            width: 900px;
+            height: 150px;
+            background-color: #F0EBE3;
+        }
+        .socialMedia {
+            width: 350px;
+            height: 150px;
+            background-color: #E4DCCF;
+        }
+    </style>
+    <script>
+        /************* yang-ji-seon (main3 - board) start *************/  
+        window.onload = function() {  // 페이지 접속시 자동 실행 (jQuery를 쓰는게 성능면에서 더 좋다고 하지만 안배움...)
+          // board의 ul 태그 안에 li 불러오기 (notice, education 각각)
+          for(i = 0; i < 4; i++) {
+            const board_li1 = document.createElement("li");
+            let notice_text = "그들의 장비와 기구는 모두 살아있다. 그들의 장비와 기구는 모두 살아있다. 그들의 장비와 기구는 모두 살아있다.";
+            board_li1.textContent = notice_text;
+            document.getElementById('notice_text').appendChild(board_li1);
+          }
+          for(i = 0; i < 4; i++) {
+            const board_li2 = document.createElement("li");
+            let edu_text = "블라 블라 블라 블라 블라 블라 블라 블라 블라 블라 블라 블라 블라 블라 블라 블라 블라 블라 블라 블라 블라 블라";
+            board_li2.textContent = edu_text;
+            document.getElementById('edu_text').appendChild(board_li2);
+          }
+        }
+        /************* yang-ji-seon (main3 - board) end *************/  
+
+      </script>
+</head>
+<body>
+<header>
+    <div id="logo">
+        <img src="#">
+    </div>
+    <nav>
+        <ui>
+            <li id="topmenu">인사말
+                <ui>
+                    <li>인사말</li>
+                    <li>연혁</li>
+                    <li>조직도</li>
+                    <li>오시는길</li>
+                </ui>
+            </li>
+            <li>회원사
+                <ui>
+                    <li>회원사소식</li>
+                    <li>가입안내</li>
+                    <li>임원사 소개</li>
+                </ui>
+            </li>
+            <li>주요사업
+                <ui>
+                    <li>회원사소식</li>
+                    <li>가입안내</li>
+                    <li>임원사 소개</li>
+                </ui>
+            </li>
+            <li>정보마당
+                <ui>
+                    <li>회원사소식</li>
+                    <li>가입안내</li>
+                    <li>임원사 소개</li>
+                </ui>
+            </li>
+        </ui>
+    </nav>
+</header>
+<!------- main : left ---------->
+<section id="main">
+    <div id="gallery">
+        사진슬라이드
+    </div>
+<!------- main : right ---------->
+    <aside>
+        <div id="menu">
+            <div class="login">
+                로그인, 회원가입
+            </div>
+            <div class="pointMenu">
+                메뉴몇개
+            </div>
+            <div class="calendar">
+                달력or일정
+            </div>
+        </div>
+    </aside>
+</section>
+<!------- main : business ---------->
+<section id="main2">
+    <div id="business">
+        <div class="businessBanner">
+            왼쪽
+        </div>
+        <div class="businessIcon">
+            오른쪽 아이콘부분
+        </div>
+    </div>
+</section>
+<article id="main3">
+    <div id="board">
+        <div id="notice">
+          <div class="board_top">
+            <div class="square"></div>
+            <a href="#"><p class="title">공지<br>사항</p></a>
+            <a href="#"><p class="more">더보기&nbsp;&gt;&nbsp;</p></a>
+          </div>
+          <div class="board_list">
+            <ul class="list_text" id="notice_text"></ul>
+          </div>
+        </div>
+    
+        <div id="education">
+            <div class="board_top">
+                <div class="square"></div>
+                <a href="#"><p class="title">교육<br>정보</p></a>
+                <a href="#"><p class="more">더보기&nbsp;&gt;&nbsp;</p></a>
+              </div>
+          <div class="board_list">
+            <ul class="list_text" id="edu_text"></ul>
+          </div>
+        </div>
+      </div>
+    
+    <div id="popup">
+        팝업존
+    </div>
+</article>
+<!------- footer ---------->
+<footer>
+    <div class="assoLogo">
+        왼쪽 협회로고
+    </div>
+    <div class="info">
+        중간 회사정보
+    </div>
+    <div class="socialMedia">
+        오른쪽 소셜미디어
+    </div>
+</footer>
+</body>
+</html>
