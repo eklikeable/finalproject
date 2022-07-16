@@ -1,0 +1,82 @@
+
+.main_banner {
+	position: relative;
+	width: 1000px;
+}
+
+.main_banner .owl-prev {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	width: 50px;
+	outline: none;
+}
+
+.main_banner .owl-prev::before {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background-position: -328px -651px;
+	background-repeat: no-repeat;
+	width: 22px;
+	height: 38px;
+	content: "";
+	margin: auto;
+}
+
+.main_banner .owl-next {
+	position: absolute;
+	top: 0;      
+	right: 0;      /*버튼위치 조절*/   
+	bottom: 0;
+	outline: none;
+	width: 50px;
+}
+
+.main_banner .owl-next::before {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background-position: -1056px -369px;
+	background-repeat: no-repeat;
+	width: 22px;
+	height: 38px;
+	content: "";
+	margin: auto;
+}
+body > div > div.owl-stage-outer > div > div.owl-item.active > div > div.owl-nav > button.owl-prev {
+	background: transparent;
+	font-size: 100;
+	color: white;
+}
+body > div > div.owl-stage-outer > div > div.owl-item.active > div > div.owl-nav > button.owl-next {
+	background: transparent;
+	font-size: 100; 
+	color: white;
+}
+
+.main_banner .item {
+	padding-top: 323px;
+	height: 600px;
+	/* width: 1000px;   사진 너비 : 이걸 풀면 버튼 위치 재조정 필요함 */ 
+	box-sizing: border-box;
+	color: #fff;
+	text-align: center;
+}
+
+.main_banner .item.first {
+	background: no-repeat url("../img/main_02.png") 0/cover;
+}
+
+.main_banner .item.second {
+	background: no-repeat url("../img/main_03.png") 0/cover;
+}
+
+.main_banner .item.third {
+	background: no-repeat url("../img/main_04.png") 0/cover;
+}
