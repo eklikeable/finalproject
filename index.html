@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="https://kit.fontawesome.com/49cbe197c4.js" crossorigin="anonymous"></script>
 <style>
 header {
     width: 1440px;
@@ -26,15 +27,55 @@ aside {
     background-color: #576F72;
 }
 #main2 {
-    display: flex;
+    
 }
-#business {
+#main2 .main_business{
     display: flex;
+    justify-content: flex-start; 
+}
+#main2 .main_business #core_business{
+    background-color: #3C4250;
+    color: white;
+}
+#main2 .main_business #core_business #main2_largename{
+    font-size: 190%;
+}
+#main2 .main_business .business_box{
+    width: 210px;
+    height: 260px;
+    border: 3px solid #3C4250;
+    border-radius: 20px;
+    margin: 7px;
+    padding: 3px;
+    text-align: center;
+    display: inline-block;
+    font-weight: bold;
+}
+#main2 .main_business .business_box div{
+    align-items: center;
+}
+#main2 .main_business .business_box:hover{
+    background-color: #3C4250;
+    color: #fff;
+}
+#main2 .main_business .business_box a{
+    text-decoration: none;
+    color: #3C4250;
+    font-style: bold;
+
+}
+#main2 .main_business .business_box a:hover{
+    text-decoration: none;
+    color: #fff;
+}
+
+#business {
+    display: table;
 }
 .businessBanner {
     width: 410px;
     height: 230px;
-    background-color: #7D9D9C;
+    background-color: #3C4250;
 }
 .businessIcon {
     width: 1030px;
@@ -64,40 +105,30 @@ aside {
     height: 300px;
     background-color: #7D9D9C ;
 }
+
+
+
+
 footer {
     width: 1440px;
     height: 150px;
-    /*background-color: gainsboro;*/
     display: flex;
 }
 .footer_logo {
-    width: 190px;
+    width: 250px;
     height: 150px;
-    /*background-color: #7D9D9C;*/
 }
-.info {
-    width: 900px;
+.footer_address {
+    width: 600px;
     height: 150px;
-    /*background-color: #F0EBE3;*/
 }
-.info .footer_nav{
+.footer_address .ft_address{
     list-style: none;
 }
-.info .footer_nav li{
-    display: inline-block;
-}
-.info .footer_nav li a{
-    text-decoration: none;
-    color: black;
-}
-.info .ft_address{
-    list-style: none;
-}cd finalproject
 
 .socialMedia {
-    width: 350px;
+    width: 250px;
     height: 150px;
-    background-color: #E4DCCF;
 }
 
 .socialMedia ul li{
@@ -106,7 +137,14 @@ footer {
 .socialMedia ul li a img{
     width: 45px; height: 45px;
 }
-.socialMedia .ft_sitemap li a{
+.footer_relation{
+    width: 300px;
+    height: 150px;
+}
+.footer_relation .ft_sitemap {
+    list-style: none;
+}
+.footer_relation .ft_sitemap li a{
     text-decoration: none;
     color: black;
 }
@@ -176,19 +214,34 @@ footer {
 </section>
 <!------- main : business ---------->
 <section id="main2">
-    <div id="business">
-        <div class="businessBanner">
-            <p>한국여성IT기업입협회</p>
-            <p>주요사업</p>
+    <div class="main_business">
+        <div class="business_box" id="core_business">
+            <p id="main2_smallname">IT여성기업인협회</p><p id="main2_largename">주요사업</p></a>
         </div>
-        <div class="businessIcon">
-            <ul class="business">
-                <li><a href="#" target="_self" title="새창"><img src ="handshake.png" width="150px" alt="이브와ICT멘토링"><p>이브와ICT멘토링</p></a></li>
-                <li><a href="#" target="_self" title="새창"><img src ="handshake.png" width="150px"alt="취약부분IT활용촉진"><p>취약부분IT활용촉진</p></a></li>
-                <li><a href="#" target="_self" title="새창"><img src ="handshake.png" width="150px"alt="정책사업"><p>정책사업</p></a></li>
-                <li><a href="#" target="_self" title="새창"><img src ="handshake.png" width="150px"alt="이브와 포럼, 간담회"><p>이브와 포럼, 간담회</p></a></li>
-                <li><a href="#" target="_self" title="새창"><img src ="handshake.png" width="150px" alt="차세대 ICT 여성리더 육성"><p>차세대 ICT 여성리더 육성</p></a></li>
-            </ul>        
+        <div class="business_box" onclick="">
+            <div>
+                <a href="#" target="_self" title="새창"><i class="fa-solid fa-people-arrows-left-right" style="font-size: 100px;"></i><p>이브와ICT멘토링</p></a>
+            </div>
+        </div>
+        <div class="business_box">
+            <div>
+                <a href="#" target="_self" title="새창"><i class="fa-solid fa-desktop" style="font-size: 100px;"></i><p>취약부분IT활용촉진</p>
+            </div>
+        </div>
+        <div class="business_box">
+            <div>
+                <a href="#" target="_self" title="새창"><i class="fa-solid fa-handshake" style="font-size: 100px;"></i><p>정책사업</p></a>
+            </div>
+        </div>
+        <div class="business_box">
+            <div>
+                <a href="#" target="_self" title="새창"><i class="fa-solid fa-users" style="font-size: 100px;"></i><p>이브와 포럼, 간담회</p></a>
+            </div>
+        </div>
+        <div class="business_box">
+            <div>
+                <a href="#" target="_self" title="새창"><i class="fa-solid fa-user-graduate" style="font-size: 100px;"></i><p>차세대 ICT 여성리더 육성</p></a>
+            </div>
         </div>
     </div>
 </section>
@@ -208,29 +261,29 @@ footer {
             <a href="#"><img src="ft_logo.png"></a>
         </ul>
     </div>
-    <div class="info">
-        
-        <ul class="footer_nav">
-            <li><a href="#">개인정보처리방침 <span>|</span></a></li>
-            <li>이메일무단수집거부 <span>|</span></li>
-            <li>직업정보제공사업 신고번호 : J1516020190005</li>
-        </ul>
+    <div class="footer_address">      
         <ul class="ft_address">
-            <li>(06130) 서울 강남구 테헤란로 7길 22, 한국과학기술회관 1관 303호</li>
-            <li>Tel : 02-6956-9952 <span>|</span>FAX : 02-6949-0165<span>|</span>이메일 : kibwa@kibwa.org</li>
-            <li>개인정보, 이메일 수집거부 등 개인정보 관리자 등록 : 담당 이길용 사무국장</li>
+            <li>(61740)
+                광주광역시 남구 송암로 60,
+                광주 CGI센터 4층 402호</li>
+            <li>Tel : 062-415-3322 <span>|</span>FAX : 062-415-3322<span>|</span>이메일 : silla7@naver.com<br></li>
             <li>©IT여성기업인협회 Inc. All Rights Reserved.</li>
         </ul>
     </div>
     <div class="socialMedia">
         <ul class="ft_sns">
-            <li><a><img src ="instagram.png" alt="인스타그램"></a></li>
+            <li><a href="#"><img src ="instagram.png" alt="인스타그램"></a></li>
             <li><a href="https://www.youtube.com/channel/UCB4C4zcrDAm2dWW0dcoJuTw"><img src ="youtube.png" alt="유튜브"></a></li>
-            <li><a><img src ="twitter.png" alt="트위터"></a></li>
-            <li><a><img src ="facebook.png" alt="페이스북"></a></li>
+            <li><a href="#"><img src ="twitter.png" alt="트위터"></a></li>
+            <li><a href="#"><img src ="facebook.png" alt="페이스북"></a></li>
         </ul>
+    </div>
+    <div class="footer_relation">
         <ul class="ft_sitemap">
-            <li><a href="#">SITEMAP</a></li>
+            <li><a href="#">(사)한국여성IT기업인협회</a></li>
+            <li><a href="#">(사)한국여성IT기업인협회 영남지부</a></li>
+            <li><a href="#">(사)한국여성IT기업인협회 충청지부</a></li>
+            <li><a href="#">WITbiz</a></li>
         </ul>
     </div>
 </footer>
