@@ -4,6 +4,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <style>
         body { 
             margin: 0 auto;
@@ -82,7 +83,7 @@
     /* ASIDE */
     /* sectionRight1 440x600*/
     @media (max-width: 1280px){
-      .sectionRight .boxRight1 {
+      .sectionRight .boxRight1   {
         display: none;
       }
     }
@@ -94,44 +95,54 @@
       }
     .sectionRight a {
       text-decoration: none;
-      cursor: pointer
+      cursor: pointer;
+      color: #3c4250;
+
     }
       /* sectionRight boxRight1 */
    .boxRight1 {
-      padding: 2%;
+      padding: 3.5%;
       background: #e7e8e8;
       border-radius: 1.5rem;
-      height: 28%;
+      height: 20%;
     }
-    #btnLogin div, #btnLogin a {
-      display: block;
+    #btnLogin a {
+      /* display: block; */
       /* position: relative; */
-      margin: auto 5%;
-      padding: 4%;
-      font-size: 1.15rem;
+      padding: 4% 23%;
+      font-size: 1.2rem;
       font-weight: 550;
       color: #fff;
       background: #3c4250;
       border-radius: 1.1rem;
+      transition: background-color .5s;
       /* overflow: hidden; */
     }
-    .btnsJoinIdPw {
+    #btnLogin a:hover{
+      background-color: #e89a0a;
+    }
+    .btnJoinIdPw {
       display: flex;
       justify-content:space-between;
       margin: auto 5%;
     }
     #btnJoin, #btnId, #btnPw  {
       /* position: relative; */
-      padding: 3% 5%;
-      /* font-size: 1.1rem; */
+      padding: 4% 5%;
+      width:22%;
+      font-size: 92%;
       font-weight: 550;
       color: #3c4250;
       background:#fff;
-      border-radius: 1.1rem;
+      border-radius: 30px;
       overflow: hidden;
   }
+  #btnJoin:hover, #btnId:hover , #btnPw:hover {
+    background-color: #e89a0a;
+  }
+
 /* sectionRight pointMenu */
-@media (max-width: 805px){
+/* @media (max-width: 805px){
   #pointMenu {
       padding: 1rem 0;
       width: 100%;
@@ -147,8 +158,8 @@
 @media (max-width: 805px){
 #pointMenu > li div {
     width: 4rem;
-    /* height: 4rem; */
-    /* line-height: 4rem; */
+    height: 4rem;
+    line-height: 4rem;
   }
 }
 @media (max-width: 1280px){
@@ -161,9 +172,10 @@
     width: 3rem;
     height: auto;
 }
-}
+} */
+
 #pointMenu {
-  padding: 0 3%;
+  padding: 1% 3%;
   list-style: none;
   font-size: 80%;
   height: 17%;
@@ -172,13 +184,13 @@
   display:flex;
   float:left; 
   justify-content:space-between;
-  padding: 1% 5%;
+  padding: 1% 4.4%;
+  width: 65px;
+  height: 65px;
 }
 
 #pointMenu > li div {
-  /* overflow: hidden;  */
-  width: 60px;
-  height: 60px;
+
   background: #fff;
   /* border-radius: 1.1rem; */
   /* box-shadow: -2px -2px 5px rgb(0 0 0 / 5%), 2px 2px 5px rgb(0 0 0 / 5%); */
@@ -194,281 +206,66 @@
     margin-top: 1rem;
     text-align: center;
     font-weight: 600;
-    color: #3c4250;
-    /* overflow: visible; */
-    /* line-height: 1.2; */
+    color: #323437;
+    overflow: visible;
+    line-height: 1.2;
 }
 #pointMenu > li div:hover img{
     display:block;
     transform:translate(2px,2px) ;   
     opacity: 0.9;
     }
+    
+    /* Calendar _boxRight3 */
+    .boxRight3{
+      width: 100%;
+      height:53%;
+      margin: 4% 0;
+    }
+.custom_calendar_table td {
+    text-align: center;
+    padding: 1.5%;
+}
 
-#calendar {
-  width: 100%;
-  height:57%;
-  padding: 3%;
+.custom_calendar_table thead.cal_date th {
+    font-size: 1.3rem;
+}
+
+.custom_calendar_table thead.cal_date th button {
+    font-size: 1.5rem;
+    font-weight: 650;
+    background: none;
+    border: none;
 
 }
-/* Calendar _boxRight3 */
-/* html, body {
-      box-sizing: border-box;
-      padding: 0;
-      margin: 0;
-    }
 
-    *, *:before, *:after {
-      box-sizing: inherit;
-    }
+.custom_calendar_table thead.cal_week th {
+    background-color:#adb1c0;
+    color: #fff;
+}
 
-    .clearfix:after {
-      content: '';
-      display: block;
-      clear: both;
-      float: none;
-    } */
+.custom_calendar_table tbody td {
+    cursor: pointer;
+}
 
-    /* Calendar */
-    .my-calendar {
-      width: 440px;
-      
-      padding: 15px 20px 10px;
-      text-align: center;
-      font-weight: 800;
-      border: 1px solid #ddd;
-      cursor: default;
-    }
-    .my-calendar .clicked-date {
-      border-radius: 25px;
-      margin-top: 10px;
-      float: left;
-      width: 30%;
-      padding: 46px 0 26px;
-      background: #ddd;
-    }
-    .my-calendar .calendar-box {
-      float: right;
-      width: 70%;
-      padding-left: 30px;
-    }
+.custom_calendar_table tbody td:nth-child(1) {
+    color: red;
+}
 
-    .clicked-date .cal-day {
-      font-size: 15px;
-    }
-    .clicked-date .cal-date {
-      font-size: 60px;
-    }
+.custom_calendar_table tbody td:nth-child(7) {
+    color: #288CFF;
+}
 
-    .ctr-box {
-      margin-bottom: 15px;
-    }
-    .ctr-box .btn-cal {
-      position: relative;
-      float: left;
-      width: 25px;
-      height: 25px;
-      margin-top: 5px;
-      font-size: 16px;
-      cursor: pointer;
-      border: none;
-      background: none;
-    }
-    .ctr-box .btn-cal:after {
-      content: '<';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      line-height: 20px;
-      font-weight: bold;
-      font-size: 20px;
-    }
-    .ctr-box .btn-cal.next {
-      float: right;
-    }
-    .ctr-box .btn-cal.next:after {
-      content: '>';
-    }
-
-    .cal-table {
-      width: 100%;
-    }
-    .cal-table th {
-      width: 14.2857%;
-      padding-bottom: 5px;
-      font-size: 11px;
-      font-weight: 900;
-    }
-    .cal-table td {
-      padding: 3px 0;
-      font-size: 11px;
-      vertical-align: middle;
-    }
-    .cal-table td.day {
-      position: relative;
-      cursor: pointer;
-    }
-    .cal-table td.today {
-      background: #ffd255;
-      border-radius: 50%;
-      color: #fff;
-    }
-    .cal-table td.day-active {
-      background: #ff8585;
-      border-radius: 50%;
-      color: #fff;
-    }
-    .cal-table td.has-event:after {
-      content: '';
-      display: block;
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      width: 100%;
-      height: 4px;
-      background: #FFC107;
-    }
+.custom_calendar_table tbody td.select_day {
+    background-color: rgb(248, 175, 112);
+    color: #fff;
+    border-radius: 50%;
+}
 /* the end of ASIDE  */
     </style>
-    <script>
-// calendar of ASDIE 
-const init = {
-      monList: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
-      dayList: ['일요일', '월요일', '화요일', '수요일', '목요일', '금요일', '토요일'],
-      today: new Date(),
-      monForChange: new Date().getMonth(),
-      activeDate: new Date(),
-      getFirstDay: (yy, mm) => new Date(yy, mm, 1),
-      getLastDay: (yy, mm) => new Date(yy, mm + 1, 0),
-      nextMonth: function () {
-        let d = new Date();
-        d.setDate(1);
-        d.setMonth(++this.monForChange);
-        this.activeDate = d;
-        return d;
-      },
-      prevMonth: function () {
-        let d = new Date();
-        d.setDate(1);
-        d.setMonth(--this.monForChange);
-        this.activeDate = d;
-        return d;
-      },
-      addZero: (num) => (num < 10) ? '0' + num : num,
-      activeDTag: null,
-      getIndex: function (node) {
-        let index = 0;
-        while (node = node.previousElementSibling) {
-          index++;
-        }
-        return index;
-      }
-    };
+  </head>
 
-    const $calBody = document.querySelector('.cal-body');
-    const $btnNext = document.querySelector('.btn-cal.next');
-    const $btnPrev = document.querySelector('.btn-cal.prev');
-
-    /**
-     * @param {number} date
-     * @param {number} dayIn
-    */
-    function loadDate (date, dayIn) {
-      document.querySelector('.cal-date').textContent = date;
-      document.querySelector('.cal-day').textContent = init.dayList[dayIn];
-    }
-
-    /**
-     * @param {date} fullDate
-     */
-    function loadYYMM (fullDate) {
-      let yy = fullDate.getFullYear();
-      let mm = fullDate.getMonth();
-      let firstDay = init.getFirstDay(yy, mm);
-      let lastDay = init.getLastDay(yy, mm);
-      let markToday;  // for marking today date
-      
-      if (mm === init.today.getMonth() && yy === init.today.getFullYear()) {
-        markToday = init.today.getDate();
-      }
-
-      document.querySelector('.cal-month').textContent = init.monList[mm];
-      document.querySelector('.cal-year').textContent = yy;
-
-      let trtd = '';
-      let startCount;
-      let countDay = 0;
-      for (let i = 0; i < 6; i++) {
-        trtd += '<tr>';
-        for (let j = 0; j < 7; j++) {
-          if (i === 0 && !startCount && j === firstDay.getDay()) {
-            startCount = 1;
-          }
-          if (!startCount) {
-            trtd += '<td>'
-          } else {
-            let fullDate = yy + '.' + init.addZero(mm + 1) + '.' + init.addZero(countDay + 1);
-            trtd += '<td class="day';
-            trtd += (markToday && markToday === countDay + 1) ? ' today" ' : '"';
-            trtd += ` data-date="${countDay + 1}" data-fdate="${fullDate}">`;
-          }
-          trtd += (startCount) ? ++countDay : '';
-          if (countDay === lastDay.getDate()) { 
-            startCount = 0; 
-          }
-          trtd += '</td>';
-        }
-        trtd += '</tr>';
-      }
-      $calBody.innerHTML = trtd;
-    }
-
-    /**
-    * @param {string} val
-    */
-    function createNewList (val) {
-      let id = new Date().getTime() + '';
-      let yy = init.activeDate.getFullYear();
-      let mm = init.activeDate.getMonth() + 1;
-      let dd = init.activeDate.getDate();
-      const $target = $calBody.querySelector(`.day[data-date="${dd}"]`);
-
-      let date = yy + '.' + init.addZero(mm) + '.' + init.addZero(dd);
-
-      let eventData = {};
-      eventData['date'] = date;
-      eventData['memo'] = val;
-      eventData['complete'] = false;
-      eventData['id'] = id;
-      init.event.push(eventData);
-      $todoList.appendChild(createLi(id, val, date));
-    }
-
-    loadYYMM(init.today);
-    loadDate(init.today.getDate(), init.today.getDay());
-
-    $btnNext.addEventListener('click', () => loadYYMM(init.nextMonth()));
-    $btnPrev.addEventListener('click', () => loadYYMM(init.prevMonth()));
-
-    $calBody.addEventListener('click', (e) => {
-      if (e.target.classList.contains('day')) {
-        if (init.activeDTag) {
-          init.activeDTag.classList.remove('day-active');
-        }
-        let day = Number(e.target.textContent);
-        loadDate(day, e.target.cellIndex);
-        e.target.classList.add('day-active');
-        init.activeDTag = e.target;
-        init.activeDate.setDate(day);
-        reloadTodo();
-      }
-    });
-    //end of calendar of ASIDE
-    </script>
-</head>
 <body>
-<header>
     <div id="logo">
         <img src="#">
     </div>
@@ -511,22 +308,22 @@ const init = {
     <div id="gallery">
         사진슬라이드
     </div>
-<!------- main : right ; PART 4 ---------->
+<!------- main : right ; <aside> .sectionRight---------->
     <aside>
         <section class="sectionRight" style="float: right">
             <div class="boxRight1">
               <p id="btnLogin">
                 <a href="http://kibwahn.cafe24.com/index.php?act=dispMemberLoginForm">IT여성기업인협회 로그인</a>
               </p>
-              <div class="btnsJoinIdPw">
+              <div class="btnJoinIdPw">
                 <p id= "btnJoin">
                   <a href="http://kibwahn.cafe24.com/index.php?mid=introduce&act=dispMemberSignUpForm">회원가입</a>
                 </p>
                 <p id = "btnId">
-                  <a href="http://kibwahn.cafe24.com/index.php?act=dispMemberFindAccount&mid=greeting">아이디찾기</a>
+                  <a href="http://kibwahn.cafe24.com/index.php?act=dispMemberFindAccount&mid=greeting">ID찾기</a>
                 </p>
-                <p id = "btnPw">
-                  <a href="http://kibwahn.cafe24.com/index.php?act=dispMemberFindAccount&mid=greeting"> 비밀번호찾기</a>
+                <p id = "btnPw" >
+                  <a href="http://kibwahn.cafe24.com/index.php?act=dispMemberFindAccount&mid=greeting" > PW찾기</a>
                 </p>
               </div>
             </div>
@@ -565,43 +362,9 @@ const init = {
               </li>
             </ul>  
             <div class = "boxRight3" id="calendar">
-             
-            </div> 
-          </section>
-          <!-- calendar -->
-          <table id="cal_table"></table><div class="container">
-            <div class="my-calendar clearfix">
-              <div class="clicked-date">
-                <div class="cal-day"></div>
-                <div class="cal-date"></div>
-              </div>
-              <div class="calendar-box">
-                <div class="ctr-box clearfix">
-                  <button type="button" title="prev" class="btn-cal prev">
-                  </button>
-                  <span class="cal-month"></span>
-                  <span class="cal-year"></span>
-                  <button type="button" title="next" class="btn-cal next">
-                  </button>
-                </div>
-                <table class="cal-table">
-                  <thead>
-                    <tr>
-                      <th>S</th>
-                      <th>M</th>
-                      <th>T</th>
-                      <th>W</th>
-                      <th>T</th>
-                      <th>F</th>
-                      <th>S</th>
-                    </tr>
-                  </thead>
-                  <tbody class="cal-body"></tbody>
-                </table>
-              </div>
+            <!-- calendar -->
             </div>
-            <!-- // .my-calendar -->
-          </div>  
+        </section>
     </aside>
 </section>
 <!------- main : business ---------->
@@ -636,5 +399,99 @@ const init = {
         오른쪽 소셜미디어
     </div>
 </footer>
+
+<!-- calendar -->
+<script>
+  //aside .sectionRight
+// calendar 
+(function () {
+    calendarMaker($("#calendar"), new Date());
+})();
+
+var nowDate = new Date();
+function calendarMaker(target, date) {
+    if (date == null || date == undefined) {
+        date = new Date();
+    }
+    nowDate = date;
+    if ($(target).length > 0) {
+        var year = nowDate.getFullYear();
+        var month = nowDate.getMonth() + 1;
+        $(target).empty().append(assembly(year, month));
+    } else {
+        console.error("custom_calendar Target is empty!!!");
+        return;
+    }
+
+    var thisMonth = new Date(nowDate.getFullYear(), nowDate.getMonth(), 1);
+    var thisLastDay = new Date(nowDate.getFullYear(), nowDate.getMonth() + 1, 0);
+
+    var tag = "<tr>";
+    var cnt = 0;
+    //빈 공백 만들기
+    for (i = 0; i < thisMonth.getDay(); i++) {
+        tag += "<td></td>";
+        cnt++;
+    }
+
+    //날짜 채우기
+    for (i = 1; i <= thisLastDay.getDate(); i++) {
+        if (cnt % 7 == 0) { tag += "<tr>"; }
+
+        tag += "<td>" + i + "</td>";
+        cnt++;
+        if (cnt % 7 == 0) {
+            tag += "</tr>";
+        }
+    }
+    $(target).find("#custom_set_date").append(tag);
+    calMoveEvtFn();
+
+    function assembly(year, month) {
+        var calendar_html_code =
+            "<table class='custom_calendar_table'>" +
+            "<colgroup>" +
+            "<col style='width:81px'/>" +
+            "<col style='width:81px'/>" +
+            "<col style='width:81px'/>" +
+            "<col style='width:81px'/>" +
+            "<col style='width:81px'/>" +
+            "<col style='width:81px'/>" +
+            "<col style='width:81px'/>" +
+            "</colgroup>" +
+            "<thead class='cal_date'>" +
+            "<th><button type='button' class='prev'><</button></th>" +
+            "<th colspan='5'><p><span>" + year + "</span>년 <span>" + month + "</span>월</p></th>" +
+            "<th><button type='button' class='next'>></button></th>" +
+            "</thead>" +
+            "<thead  class='cal_week'>" +
+            "<th>일</th><th>월</th><th>화</th><th>수</th><th>목</th><th>금</th><th>토</th>" +
+            "</thead>" +
+            "<tbody id='custom_set_date'>" +
+            "</tbody>" +
+            "</table>";
+        return calendar_html_code;
+    }
+
+    function calMoveEvtFn() {
+        //전달 클릭
+        $(".custom_calendar_table").on("click", ".prev", function () {
+            nowDate = new Date(nowDate.getFullYear(), nowDate.getMonth() - 1, nowDate.getDate());
+            calendarMaker($(target), nowDate);
+        });
+        //다음날 클릭
+        $(".custom_calendar_table").on("click", ".next", function () {
+            nowDate = new Date(nowDate.getFullYear(), nowDate.getMonth() + 1, nowDate.getDate());
+            calendarMaker($(target), nowDate);
+        });
+        //일자 선택 클릭
+        $(".custom_calendar_table").on("click", "td", function () {
+            $(".custom_calendar_table .select_day").removeClass("select_day");
+            $(this).removeClass("select_day").addClass("select_day");
+        });
+    }
+}
+
+  </script>
 </body>
 </html>
